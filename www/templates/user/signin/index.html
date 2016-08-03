@@ -22,6 +22,7 @@
                 <md-input-container md-no-float="">
                     <input class="user-password" type="password" placeholder="Password">
                 </md-input-container>
+                
             </div>
             <div>
                 <a class="md-raised md-button md-accent">
@@ -29,9 +30,9 @@
                 </a>
             </div>
         </form> <!--end login form section-->
-        <div class="otherlogg">
+        <div class="otherlogg" id="signupbox">
             <div>
-                <a class="md-raised md-button md-primary md-hue-2">
+                <a ng-href="#signup" class="md-raised md-button md-primary md-hue-2" ng-click="moveBox()">
                     Sign Up
                 </a>
             </div>

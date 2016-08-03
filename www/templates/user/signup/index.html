@@ -1,4 +1,4 @@
-<ion-view title="Material Design">
+<ion-view title="Sign Up" hide-nav-bar="true">
     <!--left button on navigation bar-->
     <ion-nav-buttons side="left">
         <a ng-click="$ionicGoBack()" class="button back-button buttons button-clear header-item nav-back-btn">
@@ -6,39 +6,63 @@
         </a>
     </ion-nav-buttons><!--end left button on navigation bar-->
 
-    <!--social sign up section-->
-    <ion-content id="social-sign-up-content">
-        <div class="app-icon">
-            <img src="img/app_icon.png" class="md-card-image">
-        </div>
-        <!--input section-->
-        <md-input-container md-no-float="">
+    <!--login content section-->
+    <ion-content id="social-login" class="bg-green">
+        <!-- login form section-->
+        <form class="fakeLogin-form">
             <div>
-                <input class="user-name" placeholder="Username">
+                <img src="img/app_icon.png"/>
             </div>
-        </md-input-container>
-        <md-input-container md-no-float="">
-            <div>
-                <input type="password" class="user-name" placeholder="Password">
-            </div>
-        </md-input-container>
-        <md-input-container md-no-float="">
-            <div>
-                <input type="password" class="user-name" placeholder="Confirm Password">
-            </div>
-        </md-input-container>
-        <md-input-container md-no-float="">
-            <div>
-                <input class="user-name" placeholder="Mail">
-            </div>
-        </md-input-container>
-        <md-checkbox aria-label="CheckboxTerms">
-            I accept terms and conditions.
-        </md-checkbox>
-        <!--end input section-->
-        <a class="md-raised social-button md-button md-default-theme material-background">
-            Sign Up
-        </a>
 
-    </ion-content><!--end social sign up section-->
+            <div class="logg">
+                <md-input-container md-no-float="">
+                    <input class="user-name" placeholder="Email" id="email">
+                </md-input-container>
+
+                <md-input-container md-no-float="">
+                    <input class="user-password" type="password" placeholder="Password" id="pw">
+                </md-input-container>
+
+                <md-input-container md-no-float="">
+                    <input class="user-password" type="password" placeholder="Confirm Password">
+                </md-input-container>
+
+                <md-input-container md-no-float="">
+                    <input class="user-name" placeholder="First Name" id="fn">
+                </md-input-container>
+
+                <md-input-container md-no-float="">
+                    <input class="user-name" placeholder="Last Name" id="ln">
+                </md-input-container>
+
+                <md-input-container md-no-float="">
+                    <textarea class="user-name" placeholder="Address" id="address1"></textarea>
+                </md-input-container>
+
+                <md-input-container md-no-float="">
+                    <input class="user-name" placeholder="City" id="city">
+                </md-input-container>
+
+                <md-input-container md-no-float="">
+                    <input class="user-name" placeholder="State" id="state">
+                </md-input-container>
+
+                <md-input-container md-no-float="">
+                    <input class="user-name" placeholder="Zip Code" id="zip">
+                </md-input-container>
+            </div>
+            <div>
+                <a class="md-raised md-button md-accent">
+                    Sign Up
+                </a>
+            </div>
+        </form> <!--end login form section-->
+        <div class="otherlogg">
+            <div>
+                <a class="md-raised md-button md-primary md-hue-2" ng-click="navigateTo('app.signin')">
+                    Sign In
+                </a>
+            </div>
+        </div>
+    </ion-content><!--end login content section-->
 </ion-view>

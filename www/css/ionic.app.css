@@ -101,6 +101,29 @@ $dark:                            #444 !default;
   color: #fff;
 }
 
+.logg textarea{
+  border-bottom: solid 1px #fff;
+  color: #fff;
+}
+
+.logg ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+color: #fff;
+}
+.logg :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+color: #fff;
+opacity: 1;
+}
+.logg ::-moz-placeholder { /* Mozilla Firefox 19+ */
+color: #fff;
+opacity: 1;
+}
+.logg :-ms-input-placeholder { /* Internet Explorer 10-11 */
+color: #fff;
+}
+.logg :placeholder-shown { /* Standard Pseudo-class */
+color: #fff;
+}
+
 .otherlogg{
   background-color: #54bc97;
   color: #fff;
