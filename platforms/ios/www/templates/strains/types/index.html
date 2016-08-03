@@ -1,0 +1,143 @@
+<!--View Information-->
+<!--View name : Dashboard-->
+<!--Controller name : dashboardCtrl-->
+<!--Controller path : www/templates/material-user-interface/dashboard/js/controllers.js-->
+<!--State name : app.dashboard-->
+<!--URL : #app/dashboard--> 
+
+<ion-pane view-title="">
+    <md-content>
+        <md-toolbar class="bar-subheader md-tall md-primary toolbar-medium">
+            <div>
+                <h1>Strains</h1>
+
+                <h2>By Type</h2>
+            </div>
+        </md-toolbar><!--end toolbar section-->
+    </md-content>
+
+    <!--product detail section-->
+    <ion-content id="strains" class="big-header">
+            <!--product tabs section-->
+            <div id="product-detail-content" class="fade-in">
+                <!--type section-->
+                            <div id="location-feed-content">
+                                    <div class="location-list">
+                                        <!--type item section-->
+                                        <div ng-click="navigateTo('app.sativa')" class="location-item">
+                                            <div class="location-img" style="background-image:url('img/sativa.jpg'); background-position: center center;">
+
+                                            </div>
+                                            <div class="location-content row">
+                                                <div class="col-90">
+                                                    <h1>
+                                                        Sativa
+                                                    </h1>
+
+                                                    <p>
+                                                        <i class="fa fa-child"></i> Uplifting and Creative
+                                                    </p>
+                                                </div>
+                                                <div class="col-10">
+                                                    <span class="text-add">+Share</span>
+                                                </div>
+                                            </div>
+                                        </div><!--end type item section-->
+
+                                        <!--type item section-->
+                                        <div class="location-item">
+                                            <div ui-sref="app.indica" class="location-img" style="background-image:url('img/indica.jpg')">
+
+                                            </div>
+                                            <div class="location-content row">
+                                                <div class="col-90">
+                                                    <h1>
+                                                        Indica
+                                                    </h1>
+
+                                                    <p>
+                                                        <i class="fa fa-hotel"></i> Sedating and Relaxing
+                                                    </p>
+                                                </div>
+                                                <div class="col-10">
+                                                    <span class="text-add">+Share</span>
+                                                </div>
+                                            </div>
+                                        </div><!--end type item section-->
+
+                                        <!--type item section-->
+                                        <div class="location-item">
+                                            <div ui-sref="app.hybrid" class="location-img" style="background-image:url('img/hybrid.jpg')">
+
+                                            </div>
+                                            <div class="location-content row">
+                                                <div class="col-90">
+                                                    <h1>
+                                                        Hybrid
+                                                    </h1>
+
+                                                    <p>
+                                                        <i class="fa fa-globe"></i> Best of Both Worlds
+                                                    </p>
+                                                </div>
+                                                <div class="col-10">
+                                                    <span class="text-add">+Share</span>
+                                                </div>
+                                            </div>
+                                        </div><!--end type item section-->
+                                    </div><!--end type section-->
+                            </div>
+            </div>
+    </ion-content>
+    <!--end product detail section-->
+
+    <!--loading progress-->
+    <div id="product-detail-loading-progress" class="loading-progress fade-in">
+        <ion-spinner ng-if="!isAndroid" class="progress-circular"></ion-spinner>
+        <md-progress-circular ng-if="isAndroid" md-mode="indeterminate"></md-progress-circular>
+    </div> <!--end loading progress-->
+
+    <!--canvas for save image to local devise-->
+    <canvas id="imgCanvas" class="display-none"></canvas>
+
+    <!--angular template section-->
+    <script type="text/ng-template" id="bottom-sheet-shared.html">
+        <md-bottom-sheet class="md-grid">
+            <!--list section-->
+            <md-list id="bottom-sheet-grid-md-list">
+                <md-list-item>
+                    <a class="md-grid-item-content" ng-click="sharedFacebook()">
+                        <md-icon md-svg-src="facebook"></md-icon>
+                        <div class="md-grid-text"> Facebook</div>
+                    </a>
+                </md-list-item>
+                <md-list-item>
+                    <a class="md-grid-item-content" ng-click="sharedTwitter()">
+                        <md-icon md-svg-src="twitter"></md-icon>
+                        <div class="md-grid-text"> Twitter</div>
+                    </a>
+                </md-list-item>
+                <md-list-item>
+                    <a class="md-grid-item-content" ng-click="sharedMail()">
+                        <md-icon md-svg-src="mail"></md-icon>
+                        <div class="md-grid-text"> Mail</div>
+                    </a>
+                </md-list-item>
+                <md-list-item>
+                    <a class="md-grid-item-content" ng-click="saveImage()">
+                        <i class="ion-android-image"></i>
+
+                        <div class="md-grid-text"> Save Image</div>
+                    </a>
+                </md-list-item>
+                <md-list-item>
+                    <a class="md-grid-item-content" ng-click="sharedMore()">
+                        <md-icon md-svg-src="share-arrow"></md-icon>
+                        <div class="md-grid-text"> More</div>
+                    </a>
+                </md-list-item>
+            </md-list> <!--end list section-->
+        </md-bottom-sheet>
+    </script>
+    <!--end angular template section-->
+</ion-pane>

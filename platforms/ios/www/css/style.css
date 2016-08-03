@@ -609,26 +609,34 @@ md-sidenav {
   background-color: #f6f6f6; }
   #social-login.bg-white {
     background-color: white; }
+    #social-login.bg-green {
+    background-color: #43D4B3;
+    background: -webkit-linear-gradient(#43D4B3, #a9ffe0); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#43D4B3, #a9ffe0); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#43D4B3, #a9ffe0); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#43D4B3, #a9ffe0); /* Standard syntax */
+    color: #fff; }
   #social-login form {
     margin-top: 33%; }
     #social-login form.fakeLogin-form {
-      margin-top: 22%; }
+      margin-top: 50px; }
     #social-login form div i {
       font-size: 90px;
       margin-bottom: 16px; }
     #social-login form div img {
-      width: 86px;
-      margin-bottom: 10px; }
+          width: 186px;
+    margin-bottom: 20px; }
     #social-login form #fakeLogin hr {
       margin: 10px 16% 0 16%;
       border-width: 1px; }
     #social-login form #fakeLogin md-input-container {
-      margin: 10px 16% 0 16%; }
+      margin: 10px 16% 0 16%; 
+      color: #fff;}
       #social-login form #fakeLogin md-input-container input {
         width: 100%;
         height: 30px;
         background: transparent;
-        border: none; }
+        /** border: none; **/ }
         #social-login form #fakeLogin md-input-container input.user-name {
           margin-top: 10px;
           margin-bottom: -20px; }
@@ -1295,12 +1303,13 @@ md-sidenav {
         background-color: #e3cf7a !important; }
 
 #menu-dashboard-content {
+  margin-top: 10px;
   background-color: #f6f6f6; }
   #menu-dashboard-content .menu-panel {
     background-color: white; }
     #menu-dashboard-content .menu-panel .row {
       padding: 0;
-      margin-bottom: 5px; }
+      margin-bottom: 0px; }
       #menu-dashboard-content .menu-panel .row .col-33 {
         text-align: center;
         padding: 22px 20px 10px 20px;
@@ -1645,6 +1654,62 @@ md-sidenav {
         text-align: right; }
         #cube-feed-content .feed-list .feed-item .feed-content .right i {
           font-size: 18px; }
+
+#viewstrain {
+  background-color: #f6f6f6; }
+  #viewstrain #viewstrain-slide-box {
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.14), 0px 2px 2px 0px rgba(0, 0, 0, 0.098), 0px 1px 5px 0px rgba(0, 0, 0, 0.084);
+    height: 180px; }
+    #viewstrain #viewstrain-slide-box .slider {
+      height: 100%; }
+    #viewstrain #viewstrain-slide-box .slider-slide {
+      padding-top: 80px;
+      text-align: center;
+      font-weight: 500; }
+    #viewstrain #viewstrain-slide-box .slider-pager {
+      margin-bottom: -6px !important; }
+    #viewstrain #viewstrain-slide-box .slider-slide {
+      padding-top: 0; }
+    #viewstrain #viewstrain-slide-box .icon.ion-record {
+      color: gray;
+      font-size: 8px; }
+    #viewstrain #viewstrain-slide-box span {
+      margin: 0; }
+      #viewstrain #viewstrain-slide-box span i {
+        color: white !important; }
+    #viewstrain #viewstrain-slide-box ion-slide {
+      padding-top: 50px !important;
+      color: white;
+      font-size: 15px; }
+      #viewstrain #viewstrain-slide-box ion-slide .content {
+        background-color: rgba(4, 2, 2, 0.37); }
+        #viewstrain #viewstrain-slide-box ion-slide .content h1 {
+          font-size: 28px;
+          color: white;
+          padding-top: 5px; }
+        #viewstrain #viewstrain-slide-box ion-slide .content p {
+          font-weight: 500;
+          padding-bottom: 10px; }
+  #viewstrain #viewstrain-content {
+    margin-top: 5px; }
+    #viewstrain #viewstrain-content .promotions-header {
+      margin-bottom: 0px;
+      margin-top: 5px;
+      padding: 0 10px 5px 8px; }
+      #viewstrain #viewstrain-content .promotions-header h1 {
+        color: white;
+        margin: 0;
+        font-size: 18px; }
+    #viewstrain #viewstrain-content .menu-header {
+      margin-top: -4px;
+      padding: 0 10px 8px 8px; }
+      #viewstrain #viewstrain-content .menu-header h1 {
+        color: gray;
+        margin: 0;
+        font-size: 18px; }
+    #viewstrain #viewstrain-content .menu-content-detail {
+      padding: 10px 10px 8px 10px;
+      color: gray; }
 
 #restaurant {
   background-color: #f6f6f6; }

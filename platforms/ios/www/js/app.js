@@ -12,6 +12,7 @@
 var db = null; //Use for SQLite database.
 window.globalVariable = {
     //custom color style variable
+    
     color: {
         appPrimaryColor: "",
         dropboxColor: "#017EE6",
@@ -22,8 +23,8 @@ window.globalVariable = {
         wordpressColor: "#0087BE"
     },// End custom color style variable
     startPage: {
-        url: "/app/dashboard",//Url of start page.
-        state: "app.dashboard"//State name of start page.
+        url: "/app/signin",//Url of start page.
+        state: "app.signin"//State name of start page.
     },
     message: {
         errorMessage: "Technical error please try again later." //Default error message.
@@ -40,7 +41,11 @@ window.globalVariable = {
 
 
 angular.module('starter', ['ionic','ngIOS9UIWebViewPatch', 'starter.controllers', 'starter.services', 'ngMaterial', 'ngMessages', 'ngCordova'])
-    .run(function ($ionicPlatform, $cordovaSQLite, $rootScope, $ionicHistory, $state, $mdDialog, $mdBottomSheet) {
+    .run(function ($ionicPlatform, $cordovaSQLite, $rootScope, $ionicHistory, $state, $mdDialog, $mdBottomSheet, $timeout) {
+
+        $timeout(function() {
+            angular.element(document.getElementById("strains")).removeClass("has-header");
+        });
 
         //Create database table of contracts by using sqlite database.
         //Table schema :
@@ -255,6 +260,11 @@ angular.module('starter', ['ionic','ngIOS9UIWebViewPatch', 'starter.controllers'
     .config(function ($ionicConfigProvider, $stateProvider, $urlRouterProvider, $mdThemingProvider, $mdIconProvider, $mdColorPalette, $mdIconProvider) {
 
 
+        // Enables native scroll
+        // if (ionic.Platform.isAndroid()){
+            // $ionicConfigProvider.scrolling.jsScrolling(false);
+        // }
+
         // Use for change ionic spinner to android pattern.
         $ionicConfigProvider.spinner.icon("android");
         $ionicConfigProvider.views.swipeBackEnabled(false);
@@ -294,12 +304,58 @@ angular.module('starter', ['ionic','ngIOS9UIWebViewPatch', 'starter.controllers'
          */
         //Learn more about material color patten: https://www.materialpalette.com/
         //Learn more about material theme: https://material.angularjs.org/latest/#/Theming/01_introduction
+        
+        // Custom Primary color Theme
+        $mdThemingProvider.definePalette('ldPrimary', {
+            '50': '#eff7e8',
+            '100': 'eff7e8',
+            '200': 'ef9a9a',
+            '300': 'e57373',
+            '400': 'ef5350',
+            '500': '#54bc97',
+            '600': 'e53935',
+            '700': 'd32f2f',
+            '800': '75e9c9',
+            '900': 'b71c1c',
+            'A100': 'ff8a80',
+            'A200': 'ff5252',
+            'A400': 'ff1744',
+            'A700': 'd50000',
+            'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
+                                                // on this palette should be dark or light
+            'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
+            '200', '300', '400', 'A100'],
+            'contrastLightColors': undefined    // could also specify this if default was 'dark'
+        });
+        // Custom Accent color Theme
+        $mdThemingProvider.definePalette('ldAccent', {
+            '50': '#eff7e8',
+            '100': 'eff7e8',
+            '200': 'ef9a9a',
+            '300': 'e57373',
+            '400': 'ef5350',
+            '500': '#eff7e8',
+            '600': 'e53935',
+            '700': 'd32f2f',
+            '800': 'c62828',
+            '900': 'b71c1c',
+            'A100': 'ff8a80',
+            'A200': '54bc97',
+            'A400': 'ff1744',
+            'A700': 'd50000',
+            'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
+                                                // on this palette should be dark or light
+            'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
+            '200', '300', '400', 'A100'],
+            'contrastLightColors': undefined    // could also specify this if default was 'dark'
+        });
+        
         $mdThemingProvider
             .theme('default')
-            .primaryPalette('pink')
-            .accentPalette('red');
+            .primaryPalette('ldPrimary')
+            .accentPalette('ldAccent');
 
-        appPrimaryColor = $mdColorPalette[$mdThemingProvider._THEMES.default.colors.primary.name]["500"]; //Use for get base color of theme.
+        appPrimaryColor = $mdColorPalette[$mdThemingProvider._THEMES.default.colors.primary.name]; //Use for get base color of theme.
 
         //$stateProvider is using for add or edit HTML view to navigation bar.
         //
@@ -318,6 +374,143 @@ angular.module('starter', ['ionic','ngIOS9UIWebViewPatch', 'starter.controllers'
                 abstract: true,
                 templateUrl: "templates/menu/html/menu.html",
                 controller: 'menuCtrl'
+            })
+            .state('app.signin', {
+                url: "/signin",
+                abstract: false,
+                params:{
+                    isAnimated:false
+                },
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/user/signin/index.html",
+                        controller: 'userCtrl'
+                    }
+                }
+            })
+            .state('app.signup', {
+                url: "/signup",
+                abstract: false,
+                params:{
+                    isAnimated:false
+                },
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/user/signup/index.html",
+                        controller: 'userCtrl'
+                    }
+                }
+            })
+            .state('app.types', {
+                url: "/strains",
+                abstract: false,
+                params:{
+                    isAnimated:false
+                },
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/strains/types/index.html",
+                        controller: 'typesCtrl'
+                    }
+                }
+            })
+            .state('app.flavors', {
+                url: "/flavors",
+                abstract: false,
+                params:{
+                    isAnimated:false
+                },
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/strains/flavors/index.html",
+                        controller: 'flavorsCtrl'
+                    }
+                }
+            })
+            .state('app.flavorslist', {
+                url: "/flavors/:flavor",
+                params:{
+                    isAnimated:false
+                },
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/strains/flavors/list.html",
+                        controller: 'flavorsListCtrl'
+                    }
+                }
+            })
+            .state('app.effects', {
+                url: "/effects",
+                abstract: false,
+                params:{
+                    isAnimated:false
+                },
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/strains/effects/index.html",
+                        controller: 'effectsCtrl'
+                    }
+                }
+            })
+            .state('app.effectslist', {
+                url: "/effects/:effect",
+                params:{
+                    isAnimated:false
+                },
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/strains/effects/list.html",
+                        controller: 'effectsListCtrl'
+                    }
+                }
+            })
+            .state('app.sativa', {
+                url: "/strains/types/sativa",
+                params:{
+                    isAnimated:false
+                },
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/strains/types/sativa/sativa.html",
+                        controller: 'sativaCtrl'
+                    }
+                }
+            })
+            .state('app.indica', {
+                url: "/strains/types/indica",
+                params:{
+                    isAnimated:false
+                },
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/strains/types/indica/indica.html",
+                        controller: 'indicaCtrl'
+                    }
+                }
+            })
+            .state('app.hybrid', {
+                url: "/strains/types/hybrid",
+                params:{
+                    isAnimated:false
+                },
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/strains/types/hybrid/hybrid.html",
+                        controller: 'hybridCtrl'
+                    }
+                }
+            })
+            .state('app.viewstrain', {
+                url: "/strains/:link_id",
+                params:{
+                    isAnimated:false
+                },
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/strains/view-strain.html",
+                        controller: 'ViewStrainCtrl'
+                    }
+                }
             })
             .state('app.dashboard', {
                 url: "/dashboard",
