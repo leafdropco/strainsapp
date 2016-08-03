@@ -1,0 +1,57 @@
+<!--View Information-->
+<!--View name : Dashboard-->
+<!--Controller name : dashboardCtrl-->
+<!--Controller path : www/templates/material-user-interface/dashboard/js/controllers.js-->
+<!--State name : app.dashboard-->
+<!--URL : #app/dashboard--> 
+
+<ion-view view-title="">
+    <!--right button on navigation bar-->
+    <ion-nav-buttons side="right">
+        <md-button ng-disabled="isLoading" class="md-icon-button ion-nav-button-right" ng-click="scrollTop()"
+                   aria-label="Scroll To Top">
+            <i class="ion-arrow-up-c"></i>
+        </md-button>
+    </ion-nav-buttons>
+    <!--end right button on navigation bar-->
+
+    <!--toolbar section-->
+    <md-content>
+        <md-toolbar class="bar-subheader md-tall md-primary toolbar-medium">
+            <div>
+                <h1>Strains</h1>
+
+                <h2>By Effect</h2>
+            </div>
+        </md-toolbar><!--end toolbar section-->
+    </md-content>
+
+    <!--flavor detail section-->
+    <ion-content id="strains" class="big-header">
+        <!--flavor list section-->
+        <div id="flavor-detail-content" class="fade-in">
+            <!--Below code it will show animation when selecting row.-->
+            <md-list class="flavorsList">
+                <div ng-repeat="effect in effects" ui-sref="app.effectslist({ effect: effect.effects })">
+                    <md-list-item class="row">
+                        <div class="col-20 icon">
+                            <i class="fa fa-arrow-right"></i>
+                        </div>
+                        <div class="col-80 menu">
+                            <p class="header">{{ effect.effects }}</p>
+                        </div>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                </div>
+            </md-list>
+        </div>
+    </ion-content>
+    <!--end flavor detail section-->
+
+    <!--loading progress-->
+    <div id="flavor-detail-loading-progress" class="loading-progress fade-in">
+        <ion-spinner ng-if="!isAndroid" class="progress-circular"></ion-spinner>
+        <md-progress-circular ng-if="isAndroid" md-mode="indeterminate"></md-progress-circular>
+    </div> <!--end loading progress-->
+
+</ion-view>

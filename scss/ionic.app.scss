@@ -1,0 +1,96 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+$balanced:                        #54bc97 !default;
+
+
+
+.whitebg {
+    background-color: #fff;
+}
+.margin-top-10 {
+    margin-top: 10px;
+}
+.bigHeaderMargin {
+    margin-top: 204px;
+}
+#toggle-menu-left-header{
+    background-color: $balanced;
+}
+
+.bigHeader{
+    margin-top: 164px;
+}
+
+#location-feed-content {
+    background-color: #fff;
+}
+#location-feed-content .location-list .location-item .location-content {
+    padding: 6px 10px 5px 10px;
+    background-color: #e3eae2;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+.imgHeader{
+    text-align: center;
+    padding-top:15px;
+    color: #fff;
+}
+.flavorText{
+    float: right;
+    background-color: #54bc97;
+    border-radius: 80px;
+    color: white;
+    font-weight: 500;
+    font-size: 11px;
+    width: 100px;
+    text-align: center;
+    margin-left: 5px;
+}
+
+#viewstrain-content {
+    margin-top: 30px;
+    padding: 10px;
+}
+.detailsTitle{
+    background-color: #c5c5c5;
+    color: #fff;
+}
+
+.flavorsList .icon {
+    font-size: 20px;
+    text-align: center;
+    color: gray;
+}
+.flavorsList .menu .header {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 0;
+    padding-top: 6px;
+    color: #848484;
+}
+.pane {
+    overflow-y: scroll;
+}
+
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+

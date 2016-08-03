@@ -1,0 +1,88 @@
+<ion-view>
+    <ion-nav-title>
+      {{ view.title }}
+    </ion-nav-title>
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons> <!--end left button on navigation bar-->
+
+    <!--View Strain section-->
+    <ion-content id="viewstrain">
+        <!--slider section-->
+        <ion-slide-box id="viewstrain-slide-box" show-pager="true" active-slide="0">
+            
+            <ion-slide ng-style="{'background-image': 'url(' + view.photo0 + ')'}" style="background-position: center center;">
+                
+            </ion-slide>
+            <ion-slide ng-style="{'background-image': 'url(' + view.photo1 + ')'}" style="background-position: center center;">
+                
+            </ion-slide>
+            <ion-slide ng-style="{'background-image': 'url(' + view.photo2 + ')'}" style="background-position: center center;">
+                
+            </ion-slide>
+            <ion-slide ng-style="{'background-image': 'url(' + view.photo3 + ')'}" style="background-position: center center;">
+                
+            </ion-slide>
+            <ion-slide ng-style="{'background-image': 'url(' + view.photo4 + ')'}" style="background-position: center center;">
+                
+            </ion-slide>
+            <ion-slide ng-style="{'background-image': 'url(' + view.photo5 + ')'}" style="background-position: center center;">
+                
+            </ion-slide>
+            <ion-slide ng-style="{'background-image': 'url(' + view.photo6 + ')'}" style="background-position: center center;">
+                
+            </ion-slide>
+        </ion-slide-box><!--end slider section-->
+
+        <!--View Strain content section-->
+        <div id="viewstrain-content">
+            <!--strain details section-->
+            <md-whiteframe class="md-whiteframe-z1 detailsTitle" layout="column">
+                <div class="row">
+                    <div class="promotions-header">
+                        <h1>
+                            <i class="fa fa-info-circle"></i> Details
+                        </h1>
+                    </div>
+                </div>
+            </md-whiteframe>
+            <md-whiteframe class="md-whiteframe-z1 whitebg" layout="column">
+                <div class="row">
+                    <p class="menu-content-detail">{{ view.details }}
+                </div>
+            </md-whiteframe>
+            <!--end strain details section-->
+
+            <md-whiteframe class="md-whiteframe-z1 detailsTitle margin-top-10" layout="column">
+                <div class="row">
+                    <div class="promotions-header">
+                        <h1>
+                            <i class="fa fa-leaf"></i> Flavor Profile
+                        </h1>
+                    </div>
+                </div>
+            </md-whiteframe>
+            <md-whiteframe class="md-whiteframe-z1 whitebg" layout="column">
+                <div id="menu-dashboard-content">
+                    <div class="menu-panel">
+                        <div class="row">
+                            <div class="col-33" ui-sref="app.flavorslist({ flavor: view.flavor1 })">
+                                <p>{{ view.flavor1 }}</p>
+                            </div>
+                            <div class="col-33" ui-sref="app.flavorslist({ flavor: view.flavor2 })">
+                                <p>{{ view.flavor2 }}</p>
+                            </div>
+                            <div class="col-33" ui-sref="app.flavorslist({ flavor: view.flavor3 })">
+                                <p>{{ view.flavor3 }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </md-whiteframe>
+
+        </div> <!--end viewstrain content section-->
+    </ion-content><!--end viewstrain section-->
+</ion-view>
