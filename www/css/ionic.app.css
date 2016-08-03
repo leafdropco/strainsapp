@@ -72,11 +72,45 @@ $dark:                            #444 !default;
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 0;
-  padding-top: 13px;
+  padding-top: 6px;
   color: #848484; }
 
 .pane {
   overflow-y: scroll; }
+
+.logg md-input-container {
+      margin: 30px 16% 0 16%; 
+      color: #fff;}
+.logg input {
+  padding: 10px 0;
+  border-bottom: solid 1px #fff;
+  color: #fff;
+}
+.logg input:focus, input:valid {
+  border-bottom: solid 1px #fff;
+}
+.logg input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
+  color: #fff;
+  font-size: 14px;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  visibility: visible !important;
+}
+.logg .user-password{
+  border-bottom: solid 1px #fff;
+  color: #fff;
+}
+
+.otherlogg{
+  background-color: #54bc97;
+  color: #fff;
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  margin-top: 30px;
+  padding-top: 50px;
+}
+
 
 /*!
   Ionicons, v2.0.1
@@ -3555,9 +3589,6 @@ ion-infinite-scroll {
 /* If you change these, change platform.scss as well */
 .has-header {
   top: 44px; }
-
-  .big-header {
-  top: 160px; }
 
 .no-header {
   top: 0; }

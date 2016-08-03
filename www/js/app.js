@@ -23,8 +23,8 @@ window.globalVariable = {
         wordpressColor: "#0087BE"
     },// End custom color style variable
     startPage: {
-        url: "/app/strains",//Url of start page.
-        state: "app.types"//State name of start page.
+        url: "/app/signin",//Url of start page.
+        state: "app.signin"//State name of start page.
     },
     message: {
         errorMessage: "Technical error please try again later." //Default error message.
@@ -315,7 +315,7 @@ angular.module('starter', ['ionic','ngIOS9UIWebViewPatch', 'starter.controllers'
             '500': '#54bc97',
             '600': 'e53935',
             '700': 'd32f2f',
-            '800': 'c62828',
+            '800': '75e9c9',
             '900': 'b71c1c',
             'A100': 'ff8a80',
             'A200': 'ff5252',
@@ -340,7 +340,7 @@ angular.module('starter', ['ionic','ngIOS9UIWebViewPatch', 'starter.controllers'
             '800': 'c62828',
             '900': 'b71c1c',
             'A100': 'ff8a80',
-            'A200': 'b1d3c6',
+            'A200': '54bc97',
             'A400': 'ff1744',
             'A700': 'd50000',
             'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
@@ -374,6 +374,32 @@ angular.module('starter', ['ionic','ngIOS9UIWebViewPatch', 'starter.controllers'
                 abstract: true,
                 templateUrl: "templates/menu/html/menu.html",
                 controller: 'menuCtrl'
+            })
+            .state('app.signin', {
+                url: "/signin",
+                abstract: false,
+                params:{
+                    isAnimated:false
+                },
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/user/signin/index.html",
+                        controller: 'userCtrl'
+                    }
+                }
+            })
+            .state('app.signup', {
+                url: "/signup",
+                abstract: false,
+                params:{
+                    isAnimated:false
+                },
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/user/signup/index.html",
+                        controller: 'userCtrl'
+                    }
+                }
             })
             .state('app.types', {
                 url: "/strains",
