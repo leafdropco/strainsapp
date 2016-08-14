@@ -5,16 +5,19 @@
 <!--State name : app.dashboard-->
 <!--URL : #app/dashboard--> 
 
-<ion-pane view-title="">
-    <md-content>
-        <md-toolbar class="bar-subheader md-tall md-primary toolbar-medium">
-            <div>
-                <h1>Strains</h1>
+<ion-view view-title="" has-header="false">
+    <ion-nav-buttons side="left" enable-menu-with-back-views="true">
+   <!-- Toggle left side menu -->
+   <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()"></button>
+  </ion-nav-buttons>
 
-                <h2>By Type</h2>
-            </div>
-        </md-toolbar><!--end toolbar section-->
-    </md-content>
+        <!--toolbar section-->
+    <md-toolbar class="bar-subheader md-tall md-primary toolbar-medium">
+        <div>
+            <h1>Strains</h1>
+            <h2>By Type</h2>
+        </div>
+    </md-toolbar><!--end toolbar section-->
 
     <!--product detail section-->
     <ion-content id="strains" class="big-header">
@@ -140,4 +143,4 @@
         </md-bottom-sheet>
     </script>
     <!--end angular template section-->
-</ion-pane>
+</ion-view>

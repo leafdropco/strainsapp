@@ -41,11 +41,12 @@ window.globalVariable = {
 
 
 angular.module('starter', ['ionic','ngIOS9UIWebViewPatch', 'starter.controllers', 'starter.services', 'ngMaterial', 'ngMessages', 'ngCordova'])
-    .run(function ($ionicPlatform, $cordovaSQLite, $rootScope, $ionicHistory, $state, $mdDialog, $mdBottomSheet, $timeout) {
+    .run(function ($ionicPlatform, $cordovaDevice, $cordovaSQLite, $rootScope, $ionicHistory, $state, $mdDialog, $mdBottomSheet, $timeout) {
 
         $timeout(function() {
             angular.element(document.getElementById("strains")).removeClass("has-header");
         });
+
 
         //Create database table of contracts by using sqlite database.
         //Table schema :

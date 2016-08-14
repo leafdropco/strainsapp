@@ -16,7 +16,7 @@ appControllers.controller('typesCtrl', function ($scope, $rootScope, $mdToast, $
         $timeout(function () {
             jQuery('#product-detail-loading-progress').hide();
             jQuery('#product-detail-content').fadeIn();
-        }, 3000);// End loading progress.
+        }, 1000);// End loading progress.
     };// End initialForm.
 
     // sharedProduct fro show shared social bottom sheet by calling sharedSocialBottomSheetCtrl controller.
@@ -29,11 +29,11 @@ appControllers.controller('typesCtrl', function ($scope, $rootScope, $mdToast, $
                 product: product
             }
         });
-    };// End sharedProduct.
+    };// End sharedProduct. 
 
     $scope.initialForm();
 })
-appControllers.controller('flavorsCtrl', function ($scope, $rootScope, $mdToast, $mdBottomSheet, $timeout, $stateParams, FlavorsGet, $ionicScrollDelegate) {
+appControllers.controller('flavorsCtrl', function ($scope, $timeout, FlavorsGet, $ionicScrollDelegate) {
 
  $scope.initialForm = function () {
         // Loading progress.
@@ -48,20 +48,9 @@ appControllers.controller('flavorsCtrl', function ($scope, $rootScope, $mdToast,
         $timeout(function () {
             jQuery('#flavor-detail-loading-progress').hide();
             jQuery('#flavor-detail-content').fadeIn();
-        }, 3000);// End loading progress.
+        }, 1000);// End loading progress.
     };// End initialForm.
 
-    // sharedProduct fro show shared social bottom sheet by calling sharedSocialBottomSheetCtrl controller.
-    $scope.sharedProduct = function ($event, product) {
-        $mdBottomSheet.show({
-            templateUrl: 'bottom-sheet-shared.html',
-            controller: 'sharedSocialBottomSheetCtrl',
-            targetEvent: $event,
-            locals: {
-                product: product
-            }
-        });
-    };// End sharedProduct.
 
     $scope.initialForm();
 
@@ -83,45 +72,36 @@ appControllers.controller('flavorsListCtrl', function ($scope, FlavorsGet, $stat
     });
     
 })
-appControllers.controller('effectsCtrl', function ($scope, $rootScope, $mdToast, $mdBottomSheet, $timeout, $stateParams, EffectsGet, $ionicScrollDelegate) {
+appControllers.controller('effectsCtrl', function ($scope, $timeout, EffectsGet, $ionicScrollDelegate) {
 
  $scope.initialForm = function () {
-        // Loading progress.
+
+     // Loading progress.
         $timeout(function () {
             if ($scope.isAndroid) {
-                jQuery('#flavor-detail-loading-progress').show();
+                jQuery('#effects-detail-loading-progress').show();
             }
             else {
-                jQuery('#flavor-detail-loading-progress').fadeIn(700);
+                jQuery('#effects-detail-loading-progress').fadeIn(700);
             }
         }, 400);
         $timeout(function () {
-            jQuery('#flavor-detail-loading-progress').hide();
-            jQuery('#flavor-detail-content').fadeIn();
-        }, 3000);// End loading progress.
+            jQuery('#effects-detail-loading-progress').hide();
+            jQuery('#effects-detail-content').fadeIn();
+        }, 1000);// End loading progress.
+        
+
+        EffectsGet.get(true, true, function(data){
+            $scope.effects = data;
+        });
+
+        $scope.scrollTop = function() {
+            $ionicScrollDelegate.scrollTop(true);
+        };
+
     };// End initialForm.
 
-    // sharedProduct fro show shared social bottom sheet by calling sharedSocialBottomSheetCtrl controller.
-    $scope.sharedProduct = function ($event, product) {
-        $mdBottomSheet.show({
-            templateUrl: 'bottom-sheet-shared.html',
-            controller: 'sharedSocialBottomSheetCtrl',
-            targetEvent: $event,
-            locals: {
-                product: product
-            }
-        });
-    };// End sharedProduct.
-
     $scope.initialForm();
-
-    EffectsGet.get(true, true, function(data){
-        $scope.effects = data;
-    });
-
-    $scope.scrollTop = function() {
-        $ionicScrollDelegate.scrollTop(true);
-    };
 })
 appControllers.controller('effectsListCtrl', function ($scope, EffectsGet, $stateParams, $rootScope, $ionicNavBarDelegate) {
    console.log($rootScope.toParams.effect);

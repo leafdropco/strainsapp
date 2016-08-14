@@ -15,18 +15,10 @@
         "is_top_level": false,
         "variables": {}
     },
-    "cordova-plugin-statusbar": {
+    "cordova-plugin-device": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-statusbar"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-camera": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-camera"
+            "id": "cordova-plugin-device"
         },
         "is_top_level": true,
         "variables": {}

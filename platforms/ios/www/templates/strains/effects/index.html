@@ -16,20 +16,17 @@
     <!--end right button on navigation bar-->
 
     <!--toolbar section-->
-    <md-content>
-        <md-toolbar class="bar-subheader md-tall md-primary toolbar-medium">
-            <div>
-                <h1>Strains</h1>
-
-                <h2>By Effect</h2>
-            </div>
-        </md-toolbar><!--end toolbar section-->
-    </md-content>
+    <md-toolbar class="bar-subheader md-tall md-primary toolbar-medium">
+        <div>
+            <h1>Strains</h1>
+            <h2>By Effect</h2>
+        </div>
+    </md-toolbar><!--end toolbar section-->
 
     <!--flavor detail section-->
     <ion-content id="strains" class="big-header">
         <!--flavor list section-->
-        <div id="flavor-detail-content" class="fade-in">
+        <div id="effects-detail-content" class="fade-in">
             <!--Below code it will show animation when selecting row.-->
             <md-list class="flavorsList">
                 <div ng-repeat="effect in effects" ui-sref="app.effectslist({ effect: effect.effects })">
@@ -49,7 +46,7 @@
     <!--end flavor detail section-->
 
     <!--loading progress-->
-    <div id="flavor-detail-loading-progress" class="loading-progress fade-in">
+    <div id="effects-detail-loading-progress" class="loading-progress fade-in">
         <ion-spinner ng-if="!isAndroid" class="progress-circular"></ion-spinner>
         <md-progress-circular ng-if="isAndroid" md-mode="indeterminate"></md-progress-circular>
     </div> <!--end loading progress-->

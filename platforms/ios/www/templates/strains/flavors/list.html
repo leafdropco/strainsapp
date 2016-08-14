@@ -11,6 +11,16 @@
             <i class="ion-android-arrow-back"></i>
         </a>
     </ion-nav-buttons> <!--end left button on navigation bar-->
+
+    <!--right button on navigation bar-->
+    <ion-nav-buttons side="right">
+        <md-button ng-disabled="isLoading" class="md-icon-button ion-nav-button-right" ng-click="scrollTop()"
+                   aria-label="Scroll To Top">
+            <i class="ion-arrow-up-c"></i>
+        </md-button>
+    </ion-nav-buttons>
+    <!--end right button on navigation bar-->
+
     <!--toolbar section-->
     <md-toolbar class="bar-subheader md-tall md-primary toolbar-medium">
         <div>
@@ -44,12 +54,10 @@
                                                 <hr/>
                                             </div>
                                             <div class="location-content row">
-                                                <p style="padding-right:5px;"><i class="fa fa-leaf"></i></p>
-                                                <p>
+                                                <div style="padding-right:5px; color:#808080;"><i class="fa fa-leaf"></i></div>
                                                     <span class="flavorText">{{ strain.flavor3 }}</span>
                                                     <span class="flavorText">{{ strain.flavor2 }}</span>
                                                     <span class="flavorText">{{ strain.flavor1 }}</span>
-                                                </p>
                                             </div>
                                         </div><!--end type item section-->
                                     </div><!--end type section-->
