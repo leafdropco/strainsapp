@@ -40,6 +40,21 @@ appControllers.controller('menuCtrl', function ($scope, $timeout, $mdUtil, $mdSi
     };
     //End closeSideNav
 
+    // Start Sign Out
+    $scope.signOutNow = function () {
+        firebase.auth().signOut().then(function() {
+            console.log('Signed Out');
+            $scope.closeSideNav();
+        }, function(error) {
+            console.error('Sign Out Error', error);
+        });
+    };
+
+
+
+
+
+
     //  $ionicPlatform.registerBackButtonAction(callback, priority, [actionId])
     //
     //     Register a hardware back button action. Only one action will execute

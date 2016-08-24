@@ -99,11 +99,13 @@ input:focus, input:valid#logg {
 #logg .user-password{
   border-bottom: solid 1px #fff;
   color: #fff;
+  font-size: 20px;
 }
 
 #logg textarea {
   border-bottom: solid 1px #fff;
   color: #fff;
+  font-size: 20px;
 }
 
 #logg ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -132,6 +134,16 @@ color: #fff;
   position: absolute;
   margin-top: 30px;
   padding-top: 50px;
+  z-index: 100;
+}
+
+.bgBtm{
+  height: 2000px;
+  width: 100%;
+  background-color: #54bc97;
+  z-index: 1;
+  position: fixed;
+  margin-top: 30%;
 }
 
 

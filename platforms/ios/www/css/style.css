@@ -611,10 +611,10 @@ md-sidenav {
     background-color: white; }
     #social-login.bg-green {
     background-color: #43D4B3;
-    background: -webkit-linear-gradient(#43D4B3, #a9ffe0); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#43D4B3, #a9ffe0); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#43D4B3, #a9ffe0); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#43D4B3, #a9ffe0); /* Standard syntax */
+    background: -webkit-linear-gradient(#39b397, #95ffd9); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#39b397, #95ffd9); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#39b397, #95ffd9); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#39b397, #95ffd9); /* Standard syntax */
     color: #fff; }
   #social-login form {
     margin-top: 33%; }
@@ -624,7 +624,7 @@ md-sidenav {
       font-size: 90px;
       margin-bottom: 16px; }
     #social-login form div img {
-          width: 186px;
+          width: 146px;
     margin-bottom: 20px; }
     #social-login form #fakeLogin hr {
       margin: 10px 16% 0 16%;

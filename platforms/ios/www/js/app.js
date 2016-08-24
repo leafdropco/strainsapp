@@ -23,8 +23,8 @@ window.globalVariable = {
         wordpressColor: "#0087BE"
     },// End custom color style variable
     startPage: {
-        url: "/app/signin",//Url of start page.
-        state: "app.signin"//State name of start page.
+        url: "/app/loading",//Url of start page.
+        state: "app.loading"//State name of start page.
     },
     message: {
         errorMessage: "Technical error please try again later." //Default error message.
@@ -40,12 +40,15 @@ window.globalVariable = {
 };// End Global variable
 
 
-angular.module('starter', ['ionic','ngIOS9UIWebViewPatch', 'starter.controllers', 'starter.services', 'ngMaterial', 'ngMessages', 'ngCordova'])
-    .run(function ($ionicPlatform, $cordovaDevice, $cordovaSQLite, $rootScope, $ionicHistory, $state, $mdDialog, $mdBottomSheet, $timeout) {
+angular.module('starter', ['ionic','ngIOS9UIWebViewPatch', 'starter.controllers', 'starter.services', 'ngMaterial', 'ngMessages', 'ngCordova', 'firebase'])
+
+    .run(function ($ionicPlatform, $cordovaDevice, $cordovaSQLite, $rootScope, $ionicHistory, $state, $mdDialog, $mdBottomSheet, $timeout, isLoggedIn) {
 
         $timeout(function() {
             angular.element(document.getElementById("strains")).removeClass("has-header");
         });
+        
+        // End creating SQLite database table.
 
 
         //Create database table of contracts by using sqlite database.
@@ -244,6 +247,7 @@ angular.module('starter', ['ionic','ngIOS9UIWebViewPatch', 'starter.controllers'
                 StatusBar.styleDefault();
             }
 
+            // startDevIdDb();
             initialSQLite();
             initialRootScope();
 

@@ -8,7 +8,6 @@
                 <img src="img/app_icon.png"/>
             </div>
             <p style="color: red;">{{errorSignIn}}</p>
-            <p>UUID: {{id}}</p>
 
             <div id="logg">
                 <md-input-container md-no-float="">
@@ -22,16 +21,18 @@
             </div>
             <div>
                 <a class="md-raised md-button md-accent" ng-click="logInNow()">
-                    Sign In
+                    Log In
                 </a>
             </div>
         </form> <!--end login form section-->
         <div class="otherlogg" id="signupbox">
             <div>
+                <p>Need to create an account?</p>
                 <a ng-href="#signup" class="md-raised md-button md-primary md-hue-2" ng-click="moveBox()">
-                    Sign Up
+                    Register
                 </a>
             </div>
         </div>
+        <div class="bgBtm"></div>
     </ion-content><!--end login content section-->
 </ion-view>

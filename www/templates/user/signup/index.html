@@ -9,22 +9,40 @@
     <!--login content section-->
     <ion-content id="social-login" class="bg-green">
         <!-- login form section-->
-        <form class="fakeLogin-form">
+        <form class="fakeLogin-form" name="signUpForm" novalidate>
             <div>
                 <img src="img/app_icon.png"/>
             </div>
             <p style="color: red;">{{errorMsg}}</p>
             <div id="logg">
                 <md-input-container md-no-float="">
-                    <input class="user-name" placeholder="Email" id="signupemail" ng-model="user.signup.email" ng-change="updateSignUpEmail()">
+                    <input class="user-name" name="signUpEmail" placeholder="Email" type="email" id="signupemail" ng-model="user.signup.email" ng-change="updateSignUpEmail()">
+                    <div ng-messages="signUpForm.signUpEmail.$error" ng-if="signUpForm.signUpEmail.$dirty">
+                        <p style="color: red;">
+                            <div ng-message="required">This field is required</div>
+                            <div ng-message="email">Your email address is invalid</div>
+                        </p>
+                    </div>
                 </md-input-container>
 
                 <md-input-container md-no-float="">
-                    <input class="user-password" type="password" placeholder="Password" id="signuppw" ng-model="user.signup.pass" ng-change="updateSignUpPass()">
+                    <input class="user-password" name="signUpPass" type="password" placeholder="Password" id="signuppw" ng-model="user.signup.pass" ng-change="updateSignUpPass()" ng-minlength="8">
+                    <div ng-messages="signUpForm.signUpPass.$error" ng-if="signUpForm.signUpPass.$dirty">
+                        <p style="color: red;">
+                            <div ng-message="required">This field is required</div>
+                            <div ng-message="minlength" style="padding: 0px;">Password should be at least 8 characters</div>
+                        </p>
+                    </div>
                 </md-input-container>
 
                 <md-input-container md-no-float="">
-                    <input class="user-password" type="password" placeholder="Confirm Password" ng-model="user.signup.passconfirm" ng-change="updateSignUpPassConfirm()">
+                    <input class="user-password" name="signUpPassConf" type="password" placeholder="Confirm Password" ng-model="user.signup.passconfirm" ng-change="updateSignUpPassConfirm()" compare-to="user.signup.pass">
+                    <div ng-messages="signUpForm.signUpPassConf.$error">
+                        <p style="color: red;">
+                            <div ng-message="required">This field is required</div>
+                            <div ng-message="compareTo" style="padding: 0px;">Passwords do not match</div>
+                        </p>
+                    </div>
                 </md-input-container>
 
                 <!-- <md-input-container md-no-float="">
@@ -52,17 +70,19 @@
                 </md-input-container> -->
             </div>
             <div>
-                <a class="md-raised md-button md-accent" ng-click="signUpNow()">
-                    Sign Up
+                <a class="md-raised md-button md-accent" data-ng-disabled="signUpForm.$invalid" ng-click="signUpNow()">
+                    Register
                 </a>
             </div>
         </form> <!--end login form section-->
         <div class="otherlogg">
             <div>
-                <a class="md-raised md-button md-primary md-hue-2" ng-click="navigateTo('app.signin')">
-                    Sign In
+                <p>Do you already have an account?</p>
+                <a class="md-raised md-button md-primary md-hue-2" nav-direction="back" ng-click="navigateTo('app.signin')">
+                    Log In
                 </a>
             </div>
         </div>
+        <div class="bgBtm"></div>
     </ion-content><!--end login content section-->
 </ion-view>

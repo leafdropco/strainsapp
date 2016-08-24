@@ -34,6 +34,9 @@
     <script src="lib/angular-material/angular-material.js"></script>
     <!-- end Angular javascript lib -->
 
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.2/angularfire.min.js"></script>
+
     <!-- Cordova script (this will be a 404 during development) -->
     <!-- <script src="lib/ngCordova/dist/ng-cordova.js"></script> -->
     <script src="js/ng-cordova.min.js"></script>
@@ -93,6 +96,9 @@
     <script src="lib/jQuery/jquery.js"></script>
     <!-- end jQuery section-->
 
+    <!-- Plugins section-->
+    <!-- end Plugins section-->
+
 </head><!-- end head section-->
 
 <!--body section-->
@@ -108,6 +114,22 @@
 <!-- end Ionic navigation bar section-->
 
 </body><!-- end body section-->
+
+
+<!-- Firebase section-->
+<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCZ35hhtdo19CdK2IT30b9gnjP3U9xlRqQ",
+    authDomain: "strains-20bde.firebaseapp.com",
+    databaseURL: "https://strains-20bde.firebaseio.com",
+    storageBucket: "",
+  };
+  firebase.initializeApp(config);
+</script>
+<!-- End Firebase section-->
+    
 
 
 <!-- Angular custom template section-->

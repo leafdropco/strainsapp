@@ -12,6 +12,9 @@
         },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.ionicframework.ionicmaterialdesign392344"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.ionicframework.ionicmaterialdesign392344"
         }
     },
     "dependent_plugins": {
